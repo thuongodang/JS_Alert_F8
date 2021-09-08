@@ -1,0 +1,154 @@
+body {
+  display: flex;
+  /* width: 100%; */
+  height: 100vh;
+  flex-direction: column;
+}
+body div {
+  margin: auto;
+  align-items: center;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  padding: 8px 36px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 120px;
+  outline: none;
+  transition: opacity ease-in 0.2s;
+}
+
+.btn--off {
+  opacity: 0.5 !important;
+  cursor: default;
+}
+
+.btn + .btn {
+  margin-left: 20px;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn--success {
+  background-color: #60db9c;
+}
+
+.btn--warning {
+  background-color: gold;
+}
+
+.btn--error {
+  background-color: tomato;
+}
+
+.btn--info{
+  background-color: cornflowerblue;
+}
+
+/* TOast message */
+#toast{
+  position: fixed;
+  right: 32px;
+  top: 32px;
+  z-index: 9999;
+}
+
+.toast {
+  display: flex;
+  padding: 16px 0;
+  border-radius: 2px;
+  border-left: 4px solid;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: aliceblue;
+  min-width: 400px;
+  max-width: 450px;
+  align-items: center;
+  transition: all linear 0.5s ;
+}
+
+@keyframes slideToLeft{
+  from{
+    transform: translateX(calc(100% + 32px));
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut{
+  to{
+    opacity: 0;
+  }
+}
+
+.toast + .toast {
+  margin-top: 24px;
+}
+
+.toast__icon {
+  font-size: 16px;
+
+  padding: 0 16px;
+}
+
+.toast__content {
+  /* padding: 0 16px; */
+  flex-grow: 1;
+}
+
+.toast__heading {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.toast__mes {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.toast__close {
+  font-size: 12px;
+  padding: 0 16px;
+  color: silver;
+}
+
+.toast--success {
+  border-color: #60db9c;
+}
+
+.toast--success .toast__icon {
+  color: #60db9c;
+}
+
+.toast--warning {
+  border-color: gold;
+}
+
+.toast--warning .toast__icon {
+  color: gold;
+}
+
+.toast--info {
+  border-color: cornflowerblue;
+}
+
+.toast--info .toast__icon {
+  color: cornflowerblue;
+}
+
+.toast--error {
+  border-color: tomato;
+}
+
+.toast--error .toast__icon {
+  color: tomato;
+}
